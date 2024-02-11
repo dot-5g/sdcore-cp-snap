@@ -3,10 +3,10 @@ base: core22
 version: '1.3'
 summary: SD-Core Control Plane
 description: |
-  The SD-Core Control Plane is a 5G Core Network.
+  The SD-Core Control Plane is a 5G Core Network developed by the ONF.
 
-grade: devel
-confinement: devmode
+grade: stable
+confinement: strict
 
 parts:
   amf:
@@ -38,7 +38,7 @@ parts:
       - go/1.21/stable
     organize:
       bin/cmd: bin/nrf
-  
+
   nssf: 
     plugin: go
     source: https://github.com/omec-project/nssf.git
@@ -48,7 +48,7 @@ parts:
       - go/1.21/stable
     organize:
       bin/cmd: bin/nssf
-  
+
   pcf:
     plugin: go
     source: https://github.com/omec-project/pcf.git
@@ -58,7 +58,7 @@ parts:
       - go/1.21/stable
     organize:
       bin/cmd: bin/pcf
-  
+
   smf:
     plugin: go
     source: https://github.com/omec-project/smf.git
@@ -68,7 +68,7 @@ parts:
       - go/1.21/stable
     organize:
       bin/cmd: bin/smf
-  
+
   udm:
     plugin: go
     source: https://github.com/omec-project/udm.git
@@ -78,7 +78,7 @@ parts:
       - go/1.21/stable
     organize:
       bin/cmd: bin/udm
-  
+
   udr:
     plugin: go
     source: https://github.com/omec-project/udr.git
@@ -88,7 +88,7 @@ parts:
       - go/1.21/stable
     organize:
       bin/cmd: bin/udr
-  
+
   webui:
     plugin: go
     source: https://github.com/omec-project/webconsole.git
@@ -98,4 +98,3 @@ parts:
       - go/1.21/stable
     organize:
       bin/cmd: bin/webui
-      
