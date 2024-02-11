@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+# Create config files
+cp "$SNAP/amf.yaml" "$SNAP_COMMON/amf.yaml"
+cp "$SNAP/ausf.yaml" "$SNAP_COMMON/ausf.yaml"
+cp "$SNAP/nrf.yaml" "$SNAP_COMMON/nrf.yaml"
+cp "$SNAP/nssf.yaml" "$SNAP_COMMON/nssf.yaml"
+cp "$SNAP/pcf.yaml" "$SNAP_COMMON/pcf.yaml"
+cp "$SNAP/smf.yaml" "$SNAP_COMMON/smf.yaml"
+cp "$SNAP/udm.yaml" "$SNAP_COMMON/udm.yaml"
+cp "$SNAP/udr.yaml" "$SNAP_COMMON/udr.yaml"
+cp "$SNAP/webui.yaml" "$SNAP_COMMON/webui.yaml"
