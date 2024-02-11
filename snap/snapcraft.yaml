@@ -96,5 +96,7 @@ parts:
     source-commit: ef2c57efb455e5a6c1c8e36e432aabc6724bdc8b
     build-snaps:
       - go/1.21/stable
-    organize:
-      bin/cmd: bin/webui
+  
+  config:
+    plugin: dump
+    source: config

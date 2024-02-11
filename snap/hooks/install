@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+# Create config files
+cp "$SNAP/amf.yaml" "$SNAP_COMMON/amf.yaml"
