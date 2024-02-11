@@ -1,0 +1,100 @@
+name: sdcore-cp
+base: core22
+version: '1.3'
+summary: SD-Core Control Plane
+description: |
+  The SD-Core Control Plane is a 5G Core Network developed by the ONF.
+
+grade: stable
+confinement: strict
+
+parts:
+  amf:
+    plugin: go
+    source: https://github.com/omec-project/amf.git
+    source-type: git
+    source-commit: a16a52f97278252499979ef43f9d1b56d86922b8
+    build-snaps:
+      - go/1.21/stable
+    organize:
+      bin/cmd: bin/amf
+
+  ausf:
+    plugin: go
+    source: https://github.com/omec-project/ausf.git
+    source-type: git
+    source-commit: 874846b42eda132df42fa66fb2497d77f2c564d2
+    build-snaps:
+      - go/1.21/stable
+    organize:
+      bin/cmd: bin/ausf
+
+  nrf:
+    plugin: go
+    source: https://github.com/omec-project/nrf.git
+    source-type: git
+    source-commit: 242879c6405bdce762d808f0589666d35236c035
+    build-snaps:
+      - go/1.21/stable
+    organize:
+      bin/cmd: bin/nrf
+
+  nssf: 
+    plugin: go
+    source: https://github.com/omec-project/nssf.git
+    source-type: git
+    source-commit: 349dd6ce2bcfc18a340a5c0973498bf63ca1b720
+    build-snaps:
+      - go/1.21/stable
+    organize:
+      bin/cmd: bin/nssf
+
+  pcf:
+    plugin: go
+    source: https://github.com/omec-project/pcf.git
+    source-type: git
+    source-commit: 2dc89ef6bdb4357514ccb1853dfddacf3b852578
+    build-snaps:
+      - go/1.21/stable
+    organize:
+      bin/cmd: bin/pcf
+
+  smf:
+    plugin: go
+    source: https://github.com/omec-project/smf.git
+    source-type: git
+    source-commit: 41f791905957aec31d17fbc7c1361eff30343b56
+    build-snaps:
+      - go/1.21/stable
+    organize:
+      bin/cmd: bin/smf
+
+  udm:
+    plugin: go
+    source: https://github.com/omec-project/udm.git
+    source-type: git
+    source-commit: 654e165ee8da01db986fdd9fb4125d3554f35818
+    build-snaps:
+      - go/1.21/stable
+    organize:
+      bin/cmd: bin/udm
+
+  udr:
+    plugin: go
+    source: https://github.com/omec-project/udr.git
+    source-type: git
+    source-commit: 653cefd60a464c3e9ea898657837331ef3ebc1aa
+    build-snaps:
+      - go/1.21/stable
+    organize:
+      bin/cmd: bin/udr
+
+  webui:
+    plugin: go
+    source: https://github.com/omec-project/webconsole.git
+    source-type: git
+    source-commit: ef2c57efb455e5a6c1c8e36e432aabc6724bdc8b
+    build-snaps:
+      - go/1.21/stable
+    organize:
+      bin/cmd: bin/webui

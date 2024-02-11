@@ -1,0 +1,32 @@
+name: Main branch workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 6 * * 0'
+
+jobs:
+  build:
+    name: Build snap
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build snap locally
+        uses: snapcore/action-build@v1
+        id: build
+      
+      - name: publish snap
+        if: ${{ github.ref_name == 'main' }}
+        uses: snapcore/action-publish@v1
+        env:
+          SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
+        with:
+          snap: ${{ steps.build.outputs.snap }}
+          release: latest/edge
