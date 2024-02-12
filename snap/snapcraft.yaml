@@ -107,6 +107,7 @@ parts:
       - libssl-dev
       - build-essential
       - liblzma-dev
+      - python3.10-venv
     override-build: |
       python3 -m venv venv
       source venv/bin/activate
